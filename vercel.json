@@ -1,0 +1,35 @@
+{
+    "verson": "1.0.0",
+    "description": "ChatGPT clone server api",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/nodemon"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/server.js"
+        }
+    ],
+    
+    "author": "Demba Sow",
+    "license": "ISC",
+    "dependencies": {
+        "mongodb": "^3.6.2",
+        "nodemon": "^2.0.4",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "dotenv": "^8.2.0",
+        "cors": "^2.8.5",
+        "openai": "^0.1.0",
+        "axios": "^0.21.0",
+        "mongoose": "^5.11.7"
+    }
+}
