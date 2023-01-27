@@ -1,9 +1,4 @@
 {
-    "description": "ChatGPT clone server api",
-    "main": "server.js",
-    "scripts": {
-        "start": "nodemon server.js"
-    },
     "builds": [
         {
             "src": "server.js",
