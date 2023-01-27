@@ -1,7 +1,7 @@
 {   "version": 2,
     "builds": [
         {
-            "src": "server.js connection.js chatbot.js",
+            "src": "server.js",
             "use": "@vercel/node"
         }
     ],

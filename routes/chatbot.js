@@ -26,7 +26,7 @@ chatbotRoute.route("/").get(function (req, res) {
 
 //GET ALL CONVERSATIONS
 chatbotRoute.route("/conversations").get(function (req, res) {
-  let db_connect = dbo.getDb(databaseName);
+  let db_connect = dbo.getDb();
 
   db_connect
     .collection("conversations")
