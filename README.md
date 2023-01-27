@@ -1,4 +1,9 @@
-# ChatGPT clone server side
+<h1 align="center"> CHATGPT CLONE </h1>
+
+
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/116443184?s=400&u=a8230032fa89a0d03a32279ab8c3d1b7e3976828&v=4" width="300" height="300"/>
+</p>
 
 ChatGPT clone is a fully functioning chatGPT server-side clone with basically all the chatGPT functionalities. Here, creating new conversations, saving conversations, and adding new messages to an existing conversation is made possible. Crud functionalities can be performed on both messages and conversations. A newly added message will generate an automatic response from the ChatGPT openai API and create a new conversation.
 
@@ -75,3 +80,11 @@ Please make sure to update tests as appropriate.
 This project is an open-source, under the  [MIT](https://choosealicense.com/licenses/mit/) license.
 
 ## Owner
+<div align="center">
+<a href="https://github.com/dembasow98">
+<img src="https://avatars.githubusercontent.com/u/62963091?v=4" width="100px;" alt="Demba Sow" style="border-radius:50%"/>
+<br />
+<sub><b>Demba Sow</b></sub>
+</a>
+<br />
+</div>
