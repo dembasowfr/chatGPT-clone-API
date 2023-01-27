@@ -11,9 +11,6 @@
             "dest": "/server.js"
         }
     ],
-
-    "author": "Demba Sow",
-    "license": "ISC",
     "dependencies": {
         "mongodb": "^3.6.2",
         "nodemon": "^2.0.4",
