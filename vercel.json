@@ -1,5 +1,4 @@
 {
-    "verson": "1.0.0",
     "description": "ChatGPT clone server api",
     "main": "server.js",
     "scripts": {
@@ -17,7 +16,7 @@
             "dest": "/server.js"
         }
     ],
-    
+
     "author": "Demba Sow",
     "license": "ISC",
     "dependencies": {
@@ -31,5 +30,9 @@
         "openai": "^0.1.0",
         "axios": "^0.21.0",
         "mongoose": "^5.11.7"
-    }
+    },
+    "devDependencies": {
+        "@vercel/nodemon": "1.9.0"
+    },
+    "installCommand": "pnpm install"
 }
