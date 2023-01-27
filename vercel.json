@@ -11,8 +11,5 @@
             "dest": "/server.js"
         }
     ],
-    "devDependencies": {
-        "@vercel/nodemon": "1.9.0"
-    },
-    "installCommand": "pnpm install"
+    "installCommand": "npm install"
 }
