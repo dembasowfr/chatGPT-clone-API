@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/116443184?s=400&u=a8230032fa89a0d03a32279ab8c3d1b7e3976828&v=4" width="300" height="300"/>
+  <img src="https://s.yimg.com/ny/api/res/1.2/j53b_lnzVOKipwrf71ilig--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM3Nw--/https://s.yimg.com/os/creatr-uploaded-images/2023-01/e63a0910-91b3-11ed-a5ef-e0922b9825e0" width="300" height="300"/>
 </p>
 
 ChatGPT clone is a fully functioning chatGPT server-side clone with basically all the chatGPT functionalities. Here, creating new conversations, saving conversations, and adding new messages to an existing conversation is made possible. Crud functionalities can be performed on both messages and conversations. A newly added message will generate an automatic response from the ChatGPT openai API and create a new conversation.
