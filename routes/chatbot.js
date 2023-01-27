@@ -41,6 +41,17 @@ chatbotRoute.route("/conversations").get(function (req, res) {
 //GET A CONVERSATION BY ID
 chatbotRoute.route("/conversations/:id").get(function (req, res) {
 
+
+  //If the id is not valid
+  if(!ObjectId.isValid(req.params.id)) {
+    console.log("Invalid conversation id '"+req.params.id+"'");
+    res.json({error: "Invalid conversation id '"+req.params.id+"'"});
+    return;
+  }
+
+  
+  //Else if the id is valid
+
   let db_connect = dbo.getDb();
 
   let myquery = { 
@@ -51,7 +62,16 @@ chatbotRoute.route("/conversations/:id").get(function (req, res) {
     .collection("conversations")
     .findOne(myquery, function (err, result) {
       if (err) throw err;
-      res.json(result);
+      //res.json(result);
+      //if the conversation doesn't exist
+      if(!result) {
+        console.log("Conversation '"+req.params.id+"' doesn't exist");
+        res.json({error: "Conversation '"+req.params.id+"' doesn't exist"});
+      }
+      else {
+        console.log("Conversation '"+req.params.id+"' found!!!");
+        res.json(result);
+      }
     });
 });
 
@@ -81,6 +101,15 @@ chatbotRoute.route("/conversations/add").post(function (req, response) {
 
 //UPDATE A CONVERSATION BY ID
 chatbotRoute.route("/conversations/update/:id").post(function (req, response) {
+
+
+   //If the id is not valid
+  if(!ObjectId.isValid(req.params.id)) {
+    console.log("Invalid conversation id '"+req.params.id+"'");
+    res.json({error: "Invalid conversation id '"+req.params.id+"'"});
+    return;
+  }
+
   let db_connect = dbo.getDb();
   //let myquery = { _id: req.params.id };
 
@@ -117,6 +146,15 @@ chatbotRoute.route("/conversations/update/:id").post(function (req, response) {
 chatbotRoute.route("/conversations/delete/:id").delete((req, response) => {
 
 
+
+   //If the id is not valid
+  if(!ObjectId.isValid(req.params.id)) {
+    console.log("Invalid conversation id '"+req.params.id+"'");
+    res.json({error: "Invalid conversation id '"+req.params.id+"'"});
+    return;
+  }
+
+
   let db_connect = dbo.getDb();
 
   // Get the conversation id from the request
@@ -150,6 +188,13 @@ chatbotRoute.route("/conversations/delete/:id").delete((req, response) => {
 
 //ADD(POST) A NEW MESSAGE in a given conversation by id
 chatbotRoute.route("/conversations/:id/messages/add").post( async function (req, response) {
+
+   //If the id is not valid
+  if(!ObjectId.isValid(req.params.id)) {
+    console.log("Invalid conversation id '"+req.params.id+"'");
+    res.json({error: "Invalid conversation id '"+req.params.id+"'"});
+    return;
+  }
 
   let conversationId = req.params.id;
   let db_connect = dbo.getDb();
@@ -243,6 +288,14 @@ chatbotRoute.route("/conversations/:id/messages/add").post( async function (req,
 //GET ALL MESSAGES in given conversation by id
 chatbotRoute.route("/conversations/:id/messages").get(function (req, res) {
 
+
+  //If the id is not valid
+  if(!ObjectId.isValid(req.params.id)) {
+    console.log("Invalid conversation id '"+req.params.id+"'");
+    res.json({error: "Invalid conversation id '"+req.params.id+"'"});
+    return;
+  }
+
   let db_connect = dbo.getDb();
   let conversationId = req.params.id;
   //if the conversation doesn't exist, return a warning message
@@ -277,6 +330,13 @@ chatbotRoute.route("/conversations/:id/messages").get(function (req, res) {
 
 //GET A SPECIFIC MESSAGE BY messageUniqueID in a given conversation by id
 chatbotRoute.route("/conversations/:id/messages/:messageUniqueID").get(async function (req, res) {
+
+   //If the id is not valid
+  if(!ObjectId.isValid(req.params.id)) {
+    console.log("Invalid conversation id '"+req.params.id+"'");
+    res.json({error: "Invalid conversation id '"+req.params.id+"'"});
+    return;
+  }
 
   let db_connect = dbo.getDb();
   let conversationId = req.params.id;
@@ -316,6 +376,14 @@ chatbotRoute.route("/conversations/:id/messages/:messageUniqueID").get(async fun
 
 //UPDATE A SPECIFIC MESSAGE by messageUniqueID in a given conversation by id
 chatbotRoute.route("/conversations/:id/messages/update/:messageUniqueID").post(async function (req, res) {
+
+
+  //If the id is not valid
+  if(!ObjectId.isValid(req.params.id)) {
+    console.log("Invalid conversation id '"+req.params.id+"'");
+    res.json({error: "Invalid conversation id '"+req.params.id+"'"});
+    return;
+  }
 
   let db_connect = dbo.getDb();
   let conversationId = req.params.id;
@@ -394,6 +462,14 @@ chatbotRoute.route("/conversations/:id/messages/update/:messageUniqueID").post(a
 //DELETE A SPECIFIC MESSAGE by messageUniqueID in a given conversation by id
 chatbotRoute.route("/conversations/:id/messages/delete/:messageUniqueID").delete(async function (req, res) {
 
+
+  //If the id is not valid
+  
+  if(!ObjectId.isValid(req.params.id)) {
+    console.log("Invalid conversation id '"+req.params.id+"'");
+    res.json({error: "Invalid conversation id '"+req.params.id+"'"});
+    return;
+  }
   let db_connect = dbo.getDb();
   let conversationId = req.params.id;
   let messageUniqueID = req.params.messageUniqueID;
