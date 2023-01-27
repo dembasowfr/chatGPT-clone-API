@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 //const DatabaseURI = process.env.ATLAS_URI;
-const DatabaseURI = process.env.MONGODB_URI;
+const DatabaseURI = process.env.ATLAS_URI;
 const DatabaseName = process.env.DATABASE_NAME;
 
 const client = new MongoClient(DatabaseURI, {
