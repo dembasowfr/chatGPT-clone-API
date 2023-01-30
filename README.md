@@ -37,8 +37,8 @@ mongodb+srv://your-username:your-password@cluster0.lm9patn.mongodb.net/?retryWri
 5. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install(or update) all the dependencies.
 
 ```bash
-pip install
-pip install mongodb nodemon express dotenv openai
+npm install
+npm install mongodb nodemon express dotenv openai
 ```
 
 ## Usage
