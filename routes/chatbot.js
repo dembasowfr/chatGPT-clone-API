@@ -1,8 +1,12 @@
 const express = require("express");
-const chatbotRoute = express.Router();
+
 const dbo = require("../database/connection");
+
 const ObjectId = require("mongodb").ObjectId;
-const databaseName = process.env.DATABASE_NAME;
+
+//const databaseName = process.env.DATABASE_NAME;
+
+const chatbotRoute = express.Router();
 
 
 //TODO: OPEN AI API PART
@@ -26,7 +30,15 @@ chatbotRoute.route("/").get(function (req, res) {
 
 //GET ALL CONVERSATIONS
 chatbotRoute.route("/conversations").get(function (req, res) {
+  
   let db_connect = dbo.getDb();
+
+  //Testing purpose
+  // console.log('Connected to MongoDB: ', db_connect)
+  // console.log('Conversations collection: ', db_connect.collection('conversations'))
+
+  //check the db_connect object
+  //console.log(db_connect);
 
   db_connect
     .collection("conversations")
