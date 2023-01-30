@@ -4,7 +4,7 @@ const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
 
 // get driver connection
-const dbo = require("./src/database/connection");
+const dbo = require("./database/connection");
 
 //Connection to MongoDB
 
@@ -17,7 +17,7 @@ const port = process.env.PORT || 8000;
 
 app.use(cors());
 app.use(express.json());
-app.use(require("./src/routes/chatbot"));
+app.use(require("./routes/chatbot"));
 
  
 app.listen(port, () => {
